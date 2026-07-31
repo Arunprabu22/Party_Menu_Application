@@ -1,0 +1,245 @@
+:root {
+  /* Color tokens */
+  --ink-plum: #241726;
+  --ink-plum-soft: #33203a;
+  --warm-paper: #fbf3e7;
+  --card-bg: #fffaf3;
+  --marigold: #f0a202;
+  --marigold-dark: #c98501;
+  --chili: #d64550;
+  --leaf: #4c7a51;
+  --leaf-soft: #e4f0e2;
+  --chili-soft: #fbe4e2;
+  --muted-plum: #7a6580;
+  --muted-plum-light: #a892ac;
+  --border-soft: #ece0d0;
+  --shadow-soft: 0 12px 28px -16px rgba(43, 27, 46, 0.35);
+
+  /* Type tokens */
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--warm-paper);
+  color: var(--ink-plum);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---- Signature element: garland divider (party bunting) ---- */
+.garland {
+  height: 10px;
+  background-image: radial-gradient(
+      circle at 6px 5px,
+      var(--marigold) 3.2px,
+      transparent 3.6px
+    ),
+    radial-gradient(circle at 22px 5px, var(--chili) 3.2px, transparent 3.6px),
+    radial-gradient(circle at 38px 5px, var(--leaf) 3.2px, transparent 3.6px);
+  background-size: 48px 10px;
+  background-repeat: repeat-x;
+  opacity: 0.9;
+}
+
+/* ---- Signature element: scalloped plate-rim edge ---- */
+.scallop-edge {
+  height: 14px;
+  background: var(--card-bg);
+  -webkit-mask-image: radial-gradient(circle at 8px 0, transparent 8px, black 8.5px);
+  mask-image: radial-gradient(circle at 8px 0, transparent 8px, black 8.5px);
+  -webkit-mask-size: 16px 14px;
+  mask-size: 16px 14px;
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--marigold-dark);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--chili);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  background: #c13843;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--border-soft);
+  color: var(--ink-plum);
+}
+
+.btn-outline:hover {
+  border-color: var(--chili);
+  color: var(--chili);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted-plum);
+  padding: 0.5rem 0.9rem;
+}
+
+.btn-ghost:hover {
+  color: var(--ink-plum);
+}
+
+/* ---- Chips ---- */
+.chip {
+  border: 1.5px solid var(--border-soft);
+  background: var(--card-bg);
+  color: var(--muted-plum);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--marigold);
+  color: var(--ink-plum);
+}
+
+.chip.active {
+  background: var(--ink-plum);
+  border-color: var(--ink-plum);
+  color: var(--warm-paper);
+}
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+}
+
+.badge-veg {
+  background: var(--leaf-soft);
+  color: var(--leaf);
+}
+
+.badge-nonveg {
+  background: var(--chili-soft);
+  color: var(--chili);
+}
+
+.badge-veg::before,
+.badge-nonveg::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1.5px solid currentColor;
+}
+
+.badge-veg::before {
+  background: var(--leaf);
+}
+
+.badge-nonveg::before {
+  background: var(--chili);
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

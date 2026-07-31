@@ -1,0 +1,68 @@
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.75rem;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.filter-row-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-plum);
+  min-width: 68px;
+}
+
+.chip-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed var(--border-soft);
+}
+
+.search-input {
+  flex: 1;
+  border: 1.5px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  background: var(--warm-paper);
+  color: var(--ink-plum);
+}
+
+.search-input:focus-visible {
+  outline: 2px solid var(--marigold);
+  border-color: var(--marigold);
+}
+
+.search-btn {
+  padding: 0.65rem 1.3rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,34 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.menu-main {
+  padding: 2rem 1.5rem 3.5rem;
+  flex: 1;
+}
+
+.menu-results-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted-plum);
+  margin-bottom: 1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+.menu-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--muted-plum);
+  background: var(--card-bg);
+  border: 1px dashed var(--border-soft);
+  border-radius: 18px;
+  font-size: 0.95rem;
+}
